@@ -1,8 +1,8 @@
-import React, { useRef } from 'react';
+import React, { useRef } from 'react'; 
 import { Video } from 'expo-av';
 import DigitalServices from './DigitalServices';
 import Services from './Services';
-import CourseralComponent from '../components/CourseralComponent'
+import CourseralComponent from '../components/CourseralComponent';
 import {
   View,
   Text,
@@ -12,28 +12,14 @@ import {
 } from 'react-native';
 
 const sections = [
-  { id: '1', title: 'Digital Services',
-    //  color: '#ff8a80', 
-     service: <DigitalServices /> },
-  { id: '2', title: 'Upcoming Services', 
-    // color: '#80d8ff', 
-    service: <Services /> },
-  { id: '3', title: 'Government Job', 
-    // color: '#ccff90', 
-    service: <CourseralComponent></CourseralComponent> },
-
-  // { id: '4', title: 'Section 4', 
-  //   // color: '#ffd180', 
-  //   service: <DigitalServices /> },
-  // { id: '5', title: 'Section 5', 
-  //   // color: '#ffab91', 
-  //   service: <DigitalServices /> },
+  { id: '1', title: 'Digital Services', service: <DigitalServices /> },
+  { id: '2', title: 'Upcoming Services', service: <Services /> },
+  { id: '3', title: 'Government Job', service: <CourseralComponent /> },
 ];
 
 const ScrollViewWithHorizontalButtons = () => {
   const scrollRef = useRef(null);
 
-  // Scroll to a specific section
   const scrollToSection = (index) => {
     scrollRef.current?.scrollTo({
       y: index * 400, // Adjust height for each section
@@ -45,7 +31,7 @@ const ScrollViewWithHorizontalButtons = () => {
     <View style={styles.container}>
       {/* Background Video */}
       <Video
-        source={require('../assets/videos/backgroundVideo.mp4')} // Replace with your video file path
+        source={require('../assets/videos/backgroundVideo.mp4')}
         style={styles.backgroundVideo}
         shouldPlay
         isLooping
@@ -80,7 +66,8 @@ const ScrollViewWithHorizontalButtons = () => {
               key={section.id}
               style={[styles.section, { backgroundColor: section.color }]}
             >
-              <Text style={styles.sectionText}>{section.service}</Text>
+              {/* Render the component directly */}
+              {section.service}
             </View>
           ))}
         </ScrollView>
@@ -137,4 +124,3 @@ const styles = StyleSheet.create({
 });
 
 export default ScrollViewWithHorizontalButtons;
-

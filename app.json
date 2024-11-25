@@ -19,14 +19,14 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.ajaykumardhurwe.blankproject"
+      "package": "com.ajaykumardhurwe.pyqbook"
     },
     "web": {
       "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
-        "projectId": "ed722269-dd3d-4387-9ff9-611422a55b5d"
+        "projectId": "4b812658-4d63-4621-ae51-bd2fee1ae8f3"
       }
     }
   }
